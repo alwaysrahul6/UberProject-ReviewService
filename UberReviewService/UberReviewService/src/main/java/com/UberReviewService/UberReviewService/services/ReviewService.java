@@ -21,23 +21,18 @@ public class ReviewService implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("*************");
-//        Review r = Review.builder().content("Amazon Ride Quality").
-//                createdAt(new Date()).
-//                updatedAt(new Date()).
-//                rating(4.0).
-//                build();
-//
-//        System.out.println(r);
-//        System.out.println(repository == null);
-//          repository.save(r);
-//
-//        List<Review> reviews = repository.findAll();
-//
-//        for (Review review : reviews){
-//            System.out.println(review.getContent());
+        Review r = Review.builder().content("Uber Ride Service").rating(4.0).build();
+        System.out.println(r.getId());
+        System.out.println(repository == null);
+        assert repository != null;
+        repository.save(r);
 
-//        }
-        repository.deleteById(3L);
+        List<Review> reviews = repository.findAll();
+
+        for (Review review : reviews){
+            System.out.println(review.getContent());
+        }
+
 
     }
 }
