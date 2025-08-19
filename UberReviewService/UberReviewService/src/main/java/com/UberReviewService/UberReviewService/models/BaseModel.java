@@ -17,7 +17,7 @@ import java.util.Date;
 public abstract class BaseModel {
     @Id
     // this annotion make the id propert is a primary key of our table.
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
